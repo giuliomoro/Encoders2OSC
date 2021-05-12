@@ -1,0 +1,36 @@
+#N canvas 101 177 523 458 12;
+#X obj 119 46 oscparse;
+#X obj 48 155 print;
+#X obj 119 72 list trim;
+#X obj 119 96 route encoder;
+#X obj 119 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 135 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 149 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 165 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 179 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 5334 1;
+#X obj 195 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 209 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 225 166 vsl 15 128 -100 100 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 119 122 route 0 1 2 3 4 5 6 7;
+#X obj 120 17 netreceive -u -b 5555;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 12 0;
+#X connect 12 0 4 0;
+#X connect 12 1 5 0;
+#X connect 12 2 6 0;
+#X connect 12 3 7 0;
+#X connect 12 4 8 0;
+#X connect 12 5 9 0;
+#X connect 12 6 10 0;
+#X connect 12 7 11 0;
+#X connect 13 0 0 0;
