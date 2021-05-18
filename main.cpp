@@ -85,7 +85,7 @@ static void printEnc(UdpClient* socket)
 	oscpkt::PacketWriter pw;
 	while(!gStop){
 		pw.init();
-		//pw.startBundle();
+		pw.startBundle();
 		unsigned int numMsg = 0;
 		for(unsigned int m = 0; m < mcps.size(); ++m)
 		{
@@ -105,7 +105,7 @@ static void printEnc(UdpClient* socket)
 				{
 					shouldPrint = true;
 					oscpkt::Message msg(gOscAddress);
-					pw.addMessage(msg.pushInt32(int32_t(n)).pushInt32(int32_t(rot)));
+					pw.addMessage(msg.pushInt32(n).pushInt32(rot));
 					printf("%s %u %d\n", gOscAddress.c_str(), n, rot);
 					++numMsg;
 				}
@@ -130,7 +130,7 @@ static void printEnc(UdpClient* socket)
 		}
 		if(numMsg)
 		{
-			//if(pw.endBundle().isOk())
+			if(pw.endBundle().isOk())
 			{
 				socket->send((void*)pw.packetData(), pw.packetSize());
 			}
